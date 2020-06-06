@@ -14,11 +14,17 @@ app.listen(3355,()=>{
     console.log("Server Start...","http://localhost:3355")
 })
 // 서버 port 충돌 방지
-app.all('/*', function(req, res, next) {
+/*app.all('/!*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     next();
-});
+});*/
+
+const path=require("path")
+app.use("/",express.static('./public'))
+app.get('/',(request,response)=>{
+    response.sendFile(path.resolve(__dirname,'public','index.html'))
+})
 // 클라이언트와 통신
 // 사용자(클라이언트)의 URI를 받아온다.
 
