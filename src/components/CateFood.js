@@ -39,7 +39,7 @@ export default function CateFood(props) {
             <tbody>
                 <tr>
                     <td className={"text-center"} rowSpan={"3"} width={"30%"}>
-                        <img src={m.poster.substring(0,m.poster.indexOf(","))} width={"100%"}/>
+                        <img src={m.image.substring(0,m.image.indexOf(","))} width={"300"} height={"150"}/>
                     </td>
                     <td width={"70%"}>{m.title}</td>
                 </tr>
@@ -55,7 +55,8 @@ export default function CateFood(props) {
     return (
         <div className={"row"}>
             <h1 className={"text-center"}>{cate_info.title}</h1>
-            <span className={"text-center"}>{cate_info.subject}</span>
+            <h3 className={"text-center"}>{cate_info.subject}</h3>
+            {html}
         </div>
     )
 }
