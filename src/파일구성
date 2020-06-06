@@ -1,0 +1,11 @@
+리덕스 파일 구성
+ src [App:main()]
+ - components : dispatch를 이용해 actions에 연결
+ - actions
+ - reducers : state를 관리하는 역할
+ - store : 저장된 데이터를 components에서 갱신
+
+ 필요한 액션을 만든후
+ reducer에서 생성후
+ reducers/index 에서 등록후
+ store에서 사용
