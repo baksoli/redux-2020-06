@@ -1,6 +1,7 @@
 import React,{useEffect} from "react";
 import {useDispatch,useSelector} from "react-redux";
 import axios from "axios";
+import {NavLink} from "react-router-dom";
 // 사용할 액션
 import {FETCH_CATE_INFO,FETCH_CATE_FOOD} from "../actions/types";
 
@@ -39,7 +40,9 @@ export default function CateFood(props) {
             <tbody>
                 <tr>
                     <td className={"text-center"} rowSpan={"3"} width={"30%"}>
-                        <img src={m.image.substring(0,m.image.indexOf(","))} width={"300"} height={"150"}/>
+                        <NavLink to={"/food_detail/"+m.no}>
+                            <img src={m.image.substring(0,m.image.indexOf(","))} width={"300"} height={"150"}/>
+                        </NavLink>
                     </td>
                     <td width={"70%"}>{m.title}</td>
                 </tr>
